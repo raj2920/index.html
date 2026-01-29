@@ -1,1 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bittu Kumar (Raj)| Software Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --accent: #3b82f6;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --success: #10b981;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-img-container {
+            width: 320px;
+            height: 320px;
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--accent);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-img-container::before {
+            content: '';
+            position: absolute;
+            width: 340px;
+            height: 340px;
+            border-radius: 50%;
+            border: 2px dashed var(--accent);
+            animation: spin 20s linear infinite;
+            top: -15px;
+            left: -15px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, var(--accent), #60a5fa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero h2 {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            color: white;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent);
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 2;
+        }
+
+        .about-stats {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .stat-box i {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .stat-box h3 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-category {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .skill-category h3 {
+            color: var(--accent);
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-item {
+            margin-bottom: 20px;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-level {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 4px;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-img {
+            height: 200px;
+            background: linear-gradient(45deg, #1e3a8a, #3b82f6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            background: rgba(59, 130, 246, 0.2);
+            color: var(--accent);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        /* Experience & Education */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--accent);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            justify-content: flex-end;
+            padding-right: 50px;
+        }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-left: 50px;
+        }
+
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            width: 90%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .timeline-date {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Certifications */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .cert-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .cert-card h3 {
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .cert-org {
+            color: #94a3b8;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            gap: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(10px);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(15, 23, 42, 0.9);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .copyright {
+            color: #94a3b8;
+            margin-top: 20px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 150px;
+            }
+            
+            .hero-content {
+                order: 2;
+            }
+            
+            .hero-image {
+                order: 1;
+                margin-bottom: 40px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                justify-content: flex-start;
+                padding-left: 50px;
+                padding-right: 0;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content::before,
+            .timeline-item:nth-child(even) .timeline-content::before {
+                left: -10px;
+                right: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-img-container {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .profile-img-container::before {
+                width: 270px;
+                height: 270px;
+                top: -10px;
+                left: -10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-code"></i>
+                    <span>Bittu Kumar (Raj) </span>
+                </div>
+                <div class="nav-links" id="navLinks">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#certifications">Certifications</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="mobile-menu" id="mobileMenu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Bittu Kumar</h1>
+                <h2>Software Engineer & Cloud Enthusiast</h2>
+                <p>Recent Computer Science graduate with a passion for building innovative software solutions. Skilled in <span class="highlight">C/C++ programming</span>, <span class="highlight">Data Structures & Algorithms</span>, and <span class="highlight">Cloud Technologies</span>. GATE 2024 qualifier with a score of 370.</p>
+                <div>
+                    <a href="#contact" class="btn">Get In Touch</a>
+                    <a href="#projects" class="btn btn-outline">View My Work</a>
+                </div>
+                <div class="social-icons">
+                    <a href="mailto:bittuk292021@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/rj-64757121a" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="tel:+919608520740"><i class="fas fa-phone"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-img-container">
+                    <!-- REPLACE THE SRC BELOW WITH YOUR PHOTO URL -->
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" 
+                         alt="Bittu Kumar" class="profile-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am a passionate and dedicated software engineering graduate from Galgotias University with a strong foundation in computer science fundamentals. My academic journey has equipped me with expertise in programming, system design, and emerging technologies like cloud computing and machine learning.</p>
+                    <p>My goal is to leverage my technical skills to develop innovative software solutions that solve real-world problems. I enjoy the process of transforming complex challenges into efficient, scalable applications.</p>
+                    <p>When I'm not coding, you can find me playing chess, cricket, or badminton – activities that keep me sharp, strategic, and energetic.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-box">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>71.6%</h3>
+                        <p>B.Tech CGPA</p>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fas fa-trophy"></i>
+                        <h3>370</h3>
+                        <p>GATE Score</p>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fas fa-certificate"></i>
+                        <h3>3+</h3>
+                        <p>Certifications</p>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fas fa-project-diagram"></i>
+                        <h3>2+</h3>
+                        <p>Projects</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Programming</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>C & C++</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Python</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Dart/Flutter</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-laptop-code"></i> Core CS</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Data Structures & Algorithms</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Operating Systems</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>DBMS & Networking</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> Tools & Technologies</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>AWS Cloud</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Git & GitHub</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            <span>Pandas, Matplotlib</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>WhatsApp Chat Analysis</h3>
+                        <p>A comprehensive tool for analyzing WhatsApp chat data using Python libraries like Pandas, Matplotlib, and Seaborn. Implements sentiment analysis and visualizes insights through a Flutter application.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Pandas</span>
+                            <span class="tag">Flutter</span>
+                            <span class="tag">Data Analysis</span>
+                            <span class="tag">Sentiment Analysis</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>AWS Cloud Projects</h3>
+                        <p>Various cloud-based projects developed during the AICTE AWS Virtual Internship. Focused on deploying scalable applications and implementing cloud best practices.</p>
+                        <div class="project-tags">
+                            <span class="tag">AWS</span>
+                            <span class="tag">Cloud Computing</span>
+                            <span class="tag">Virtualization</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Networking Simulation</h3>
+                        <p>Network configuration and simulation projects based on CCNA certification knowledge. Implemented various networking protocols and topologies.</p>
+                        <div class="project-tags">
+                            <span class="tag">Networking</span>
+                            <span class="tag">CCNA</span>
+                            <span class="tag">Juniper</span>
+                            <span class="tag">Cisco</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Education -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Experience & Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Jul 2022 - Sep 2022</div>
+                        <h3>AWS Cloud Virtual Internship</h3>
+                        <p><strong>AICTE & Ministry of Housing and Urban Affairs</strong></p>
+                        <p>Completed comprehensive training on cloud technologies with hands-on experience in AWS services. Focused on creating industry-ready workforce for emerging technologies.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020 - 2024</div>
+                        <h3>B.Tech in Computer Science & Engineering</h3>
+                        <p><strong>Galgotias University</strong> - 71.6%</p>
+                        <p>Specialized in Software Engineering, Machine Learning, and Artificial Intelligence. Key subjects: Data Structures, Algorithms, DBMS, Operating Systems, Computer Networks.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2019</div>
+                        <h3>Class XII (Science)</h3>
+                        <p><strong>Bihar School Examination Board</strong> - 78.2%</p>
+                        <p>KJ +2 High School Amba Kala</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2017</div>
+                        <h3>Class X</h3>
+                        <p><strong>Bihar School Examination Board</strong> - 70%</p>
+                        <p>KJ +2 High School Amba Kala</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certifications-grid">
+                <div class="cert-card">
+                    <h3>AWS Cloud Virtual Internship</h3>
+                    <p class="cert-org">AICTE</p>
+                    <p>Successfully completed virtual internship program on cloud technology supported by Amazon Web Services (AWS).</p>
+                </div>
+                
+                <div class="cert-card">
+                    <h3>CCNAv7: Introduction to Networks</h3>
+                    <p class="cert-org">Cisco Networking Academy</p>
+                    <p>Proficient in network fundamentals, IP connectivity, network access, IP services, and security fundamentals.</p>
+                </div>
+                
+                <div class="cert-card">
+                    <h3>Juniper Networks Networking</h3>
+                    <p class="cert-org">AICTE (Eduskills)</p>
+                    <p>Completed networking fundamentals course through Juniper Networks training program.</p>
+                </div>
+                
+                <div class="cert-card">
+                    <h3>GATE 2024 Qualified</h3>
+                    <p class="cert-org">IIT Delhi</p>
+                    <p>Qualified Graduate Aptitude Test in Engineering (GATE) with a score of 370 in Computer Science.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>bittuk292021@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+91 9608520740</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div>
+                            <h3>LinkedIn</h3>
+                            <p>linkedin.com/in/rj-64757121a</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Location</h3>
+                            <p>India</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <div>
+                            <h3>Languages</h3>
+                            <p>English, Hindi</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-code"></i>
+                <span>Bittu Kumar</span>
+            </div>
+            <div class="social-icons">
+                <a href="mailto:bittuk292021@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/rj-64757121a" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="tel:+919608520740"><i class="fas fa-phone"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+            <p class="copyright">© 2024 Bittu Kumar. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenu.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if(window.innerWidth <= 992) {
+                        navLinks.style.display = 'none';
+                    }
+                }
+            });
+        });
+        
+        // Form Submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+        
+        // Skill bars animation on scroll
+        const observerOptions = {
+            threshold: 0.5
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    const skillLevels = entry.target.querySelectorAll('.skill-level');
+                    skillLevels.forEach(level => {
+                        const width = level.style.width;
+                        level.style.width = '0';
+                        setTimeout(() => {
+                            level.style.transition = 'width 1.5s ease-in-out';
+                            level.style.width = width;
+                        }, 300);
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        // Observe skill categories
+        document.querySelectorAll('.skill-category').forEach(category => {
+            observer.observe(category);
+        });
+        
+        // Update copyright year
+        document.querySelector('.copyright').innerHTML = `© ${new Date().getFullYear()} Bittu Kumar. All Rights Reserved.`;
+        
+        // Photo fallback in case image fails to load
+        document.querySelector('.profile-img').addEventListener('error', function() {
+            this.style.display = 'none';
+            const container = this.parentElement;
+            const fallback = document.createElement('div');
+            fallback.innerHTML = '<i class="fas fa-user" style="font-size: 5rem; color: white;"></i>';
+            fallback.style.width = '100%';
+            fallback.style.height = '100%';
+            fallback.style.display = 'flex';
+            fallback.style.alignItems = 'center';
+            fallback.style.justifyContent = 'center';
+            container.appendChild(fallback);
+        });
+    </script>
+</body>
+</html>
