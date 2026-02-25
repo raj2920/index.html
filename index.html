@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BITTU KUMAR (RAJ) | 3D Portfolio – GATE 2025</title>
+    <title>BITTU KUMAR (RAJ) | CSE · GATE 2025 · STET 2025</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <style>
@@ -13,13 +13,11 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
         body {
             overflow-x: hidden;
             background: #0a0a16;
             color: #f0f0f0;
         }
-
         #three-container {
             position: fixed;
             top: 0;
@@ -28,7 +26,6 @@
             height: 100%;
             z-index: 0;
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -37,11 +34,9 @@
             z-index: 10;
             pointer-events: none;
         }
-
         .container * {
             pointer-events: auto;
         }
-
         /* glassmorphism style */
         header {
             padding: 30px 0;
@@ -50,7 +45,6 @@
             align-items: center;
             flex-wrap: wrap;
         }
-
         .logo {
             font-size: 28px;
             font-weight: 800;
@@ -61,12 +55,10 @@
             text-decoration: none;
             letter-spacing: 1.5px;
         }
-
         .nav-links {
             display: flex;
             gap: 30px;
         }
-
         .nav-links a {
             color: #f0f0f0;
             text-decoration: none;
@@ -74,11 +66,9 @@
             transition: color 0.3s;
             position: relative;
         }
-
         .nav-links a:hover {
             color: #4ecdc4;
         }
-
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -89,11 +79,9 @@
             background: #4ecdc4;
             transition: width 0.3s;
         }
-
         .nav-links a:hover::after {
             width: 100%;
         }
-
         .mobile-menu-btn {
             display: none;
             background: rgba(255,255,255,0.08);
@@ -105,15 +93,12 @@
             border-radius: 40px;
             backdrop-filter: blur(5px);
         }
-
-        /* hero section with stronger glass */
         .hero {
             min-height: 90vh;
             display: flex;
             align-items: center;
             padding: 60px 0;
         }
-
         .hero-content {
             max-width: 750px;
             background: rgba(8, 8, 20, 0.6);
@@ -123,7 +108,6 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 25px 45px rgba(0,0,0,0.5);
         }
-
         .hero h1 {
             font-size: 3.2rem;
             line-height: 1.1;
@@ -133,7 +117,6 @@
             background-clip: text;
             color: transparent;
         }
-
         .hero h2 {
             font-size: 1.7rem;
             font-weight: 400;
@@ -141,21 +124,18 @@
             opacity: 0.95;
             color: #e0f2fe;
         }
-
         .hero p {
             font-size: 1.2rem;
             line-height: 1.6;
             margin-bottom: 30px;
             opacity: 0.9;
         }
-
         .contact-info {
             display: flex;
             flex-wrap: wrap;
             gap: 18px;
             margin-bottom: 35px;
         }
-
         .contact-item {
             display: flex;
             align-items: center;
@@ -166,11 +146,9 @@
             backdrop-filter: blur(10px);
             border: 0.5px solid rgba(78,205,196,0.3);
         }
-
         .contact-item i {
             color: #4ecdc4;
         }
-
         .cta-button {
             display: inline-block;
             padding: 15px 42px;
@@ -186,26 +164,22 @@
             margin-bottom: 15px;
             border: none;
         }
-
         .cta-button:hover {
             transform: translateY(-5px);
             box-shadow: 0 18px 35px rgba(0,0,0,0.4);
         }
-
         .cta-button.secondary {
             background: rgba(20,20,40,0.7);
             border: 1px solid #4ecdc4;
             color: #f0f0f0;
             backdrop-filter: blur(5px);
         }
-
         .section-title {
             font-size: 2.5rem;
             margin-bottom: 60px;
             text-align: center;
             position: relative;
         }
-
         .section-title::after {
             content: '';
             position: absolute;
@@ -217,11 +191,9 @@
             transform: translateX(-50%);
             border-radius: 4px;
         }
-
         .section-content {
             margin-bottom: 100px;
         }
-
         .objective-card {
             background: rgba(15, 15, 30, 0.7);
             border-radius: 24px;
@@ -231,25 +203,21 @@
             box-shadow: 0 12px 25px rgba(0,0,0,0.3);
             transition: transform 0.4s;
         }
-
         .objective-card:hover {
             transform: translateY(-8px);
             border-color: rgba(78,205,196,0.4);
         }
-
         .objective-card h3 {
             font-size: 1.9rem;
             margin-bottom: 25px;
             color: #4ecdc4;
         }
-
         .objective-card p {
             font-size: 1.15rem;
             line-height: 1.7;
             margin-bottom: 18px;
             color: #f0f0f0;
         }
-
         .academic-table {
             width: 100%;
             border-collapse: collapse;
@@ -260,7 +228,6 @@
             margin-bottom: 40px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.3);
         }
-
         .academic-table th {
             background: rgba(78, 205, 196, 0.25);
             padding: 18px 12px;
@@ -268,23 +235,19 @@
             font-weight: 600;
             color: #b2f0ef;
         }
-
         .academic-table td {
             padding: 16px 12px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
-
         .academic-table tr:last-child td {
             border-bottom: none;
         }
-
         .skills-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 30px;
             margin-bottom: 40px;
         }
-
         .skill-category {
             background: rgba(15, 15, 32, 0.7);
             border-radius: 20px;
@@ -293,24 +256,20 @@
             border: 1px solid rgba(255,255,255,0.06);
             transition: transform 0.4s;
         }
-
         .skill-category:hover {
             transform: translateY(-8px);
             border-color: #ff6b6b70;
         }
-
         .skill-category h3 {
             font-size: 1.6rem;
             margin-bottom: 22px;
             color: #ff8c8c;
         }
-
         .skill-items {
             display: flex;
             flex-wrap: wrap;
             gap: 12px;
         }
-
         .skill-item {
             background: rgba(255, 107, 107, 0.12);
             color: #ffb3b3;
@@ -319,7 +278,6 @@
             font-size: 0.95rem;
             border: 0.5px solid #ff6b6b40;
         }
-
         .project-card {
             background: rgba(12, 12, 28, 0.75);
             border-radius: 24px;
@@ -330,47 +288,70 @@
             border: 1px solid rgba(255,255,255,0.06);
             margin-bottom: 45px;
         }
-
         .project-card:hover {
             transform: translateY(-12px);
             box-shadow: 0 25px 45px rgba(0,0,0,0.6);
             border-color: #4ecdc480;
         }
-
         .project-header {
             background: linear-gradient(90deg, rgba(255,107,107,0.2), rgba(78,205,196,0.2));
             padding: 28px 30px;
         }
-
         .project-header h3 {
             font-size: 1.9rem;
             margin-bottom: 8px;
             color: white;
         }
-
         .project-header .date {
             color: #4ecdc4;
             font-weight: 600;
             font-size: 1.05rem;
         }
-
         .project-content {
             padding: 30px;
         }
-
         .project-content p {
             margin-bottom: 22px;
             line-height: 1.7;
             opacity: 0.92;
         }
-
+        .project-content a {
+            color: #4ecdc4;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px dashed #4ecdc4;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .project-content a:hover {
+            color: #ff6b6b;
+            border-bottom-color: #ff6b6b;
+            transform: translateX(2px);
+        }
+        .demo-link-wrapper {
+            margin: 15px 0 10px;
+            padding: 12px 18px;
+            background: rgba(78, 205, 196, 0.1);
+            border-radius: 50px;
+            display: inline-block;
+            border: 1px solid rgba(78, 205, 196, 0.3);
+            transition: all 0.3s ease;
+        }
+        .demo-link-wrapper:hover {
+            background: rgba(78, 205, 196, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(78, 205, 196, 0.2);
+        }
+        .demo-link-wrapper i {
+            margin-right: 8px;
+            color: #4ecdc4;
+        }
         .project-keywords {
             display: flex;
             flex-wrap: wrap;
             gap: 12px;
             margin-top: 20px;
         }
-
         .keyword {
             background: rgba(78, 205, 196, 0.15);
             color: #9fefec;
@@ -379,7 +360,6 @@
             font-size: 0.88rem;
             border: 0.5px solid #4ecdc4;
         }
-
         .achievement-card {
             background: rgba(16, 16, 35, 0.7);
             border-radius: 24px;
@@ -389,18 +369,15 @@
             margin-bottom: 35px;
             transition: transform 0.4s;
         }
-
         .achievement-card:hover {
             transform: translateY(-8px);
             border-color: #ffd166;
         }
-
         .achievement-card h3 {
             color: #4ecdc4;
             margin-bottom: 18px;
             font-size: 1.8rem;
         }
-
         .cert-table {
             width: 100%;
             border-collapse: collapse;
@@ -410,19 +387,16 @@
             margin-top: 25px;
             backdrop-filter: blur(8px);
         }
-
         .cert-table th {
             background: rgba(255, 107, 107, 0.25);
             padding: 18px 15px;
             text-align: left;
             color: #ffb8b8;
         }
-
         .cert-table td {
             padding: 16px 15px;
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
-
         footer {
             text-align: center;
             padding: 45px 0;
@@ -431,7 +405,6 @@
             margin-top: 60px;
             backdrop-filter: blur(8px);
         }
-
         .footer-content {
             display: flex;
             justify-content: space-between;
@@ -439,12 +412,10 @@
             flex-wrap: wrap;
             gap: 20px;
         }
-
         .social-links {
             display: flex;
             gap: 20px;
         }
-
         .social-links a {
             display: inline-flex;
             align-items: center;
@@ -458,17 +429,14 @@
             transition: all 0.3s;
             border: 1px solid rgba(255,255,255,0.1);
         }
-
         .social-links a:hover {
             background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
             transform: translateY(-6px);
         }
-
         @media (max-width: 992px) {
             .hero h1 { font-size: 2.8rem; }
             .footer-content { flex-direction: column; text-align: center; }
         }
-
         @media (max-width: 768px) {
             .nav-links { display: none; flex-direction: column; position: absolute; top: 90px; left: 0; width: 100%; background: rgba(8,8,20,0.95); backdrop-filter: blur(20px); padding: 30px; border-radius: 0 0 20px 20px; gap: 20px; }
             .nav-links a { font-size: 1.2rem; }
@@ -477,7 +445,6 @@
             .hero-content { padding: 30px 25px; }
             .academic-table { display: block; overflow-x: auto; }
         }
-
         @media (max-width: 480px) {
             .contact-info { flex-direction: column; }
             .cta-button { width: 100%; margin-right: 0; }
@@ -505,7 +472,7 @@
             </nav>
         </header>
 
-        <!-- Hero Section – exact details from PDF -->
+        <!-- Hero Section – exact details aligned to resume -->
         <section class="hero" id="home">
             <div class="hero-content">
                 <h1>BITTU KUMAR (RAJ)</h1>
@@ -528,7 +495,7 @@
                 </div>
                 
                 <a href="#contact" class="cta-button">Hire Me</a>
-                <a href="https://www.linkedin.com/in/rj-64757121a" target="_blank" class="cta-button secondary">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/bittu-kumar-raj-64757121a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BANvcvPo2TzqXaZgr8uWzTg%3D%3D" target="_blank" class="cta-button secondary">LinkedIn</a>
             </div>
         </section>
 
@@ -584,7 +551,7 @@
                 </tbody>
             </table>
             
-            <!-- Electives / Subjects exactly from PDF -->
+            <!-- Electives exactly as PDF: Software Engineering, Machine learning And Artificial Intelligence -->
             <div style="background: rgba(20,20,45,0.6); border-radius: 18px; padding: 25px; backdrop-filter: blur(10px); margin-top: 20px;">
                 <h3 style="color:#ff9f9f; margin-bottom: 12px; font-size: 1.7rem;">Electives & Core Proficiency</h3>
                 <div class="skill-items">
@@ -602,7 +569,7 @@
             </div>
         </section>
 
-        <!-- Technical Skills (expanded with PDF terms) -->
+        <!-- Technical Skills (expanded with resume terms) -->
         <section id="skills" class="section-content">
             <h2 class="section-title">Technical Proficiency</h2>
             <div class="skills-container">
@@ -645,38 +612,56 @@
             </div>
         </section>
 
-        <!-- Projects – UPDATED with two projects: WhatsApp + GATE Rank Predictor -->
+        <!-- Projects – updated with working clickable demo links -->
         <section id="projects" class="section-content">
             <h2 class="section-title">Projects</h2>
             
-            <!-- Project 1: Machine Learning Based WhatsApp Chat Analysis (PDF) -->
+            <!-- Project 1: WhatsApp Chat Analyzer with clickable demo link -->
             <div class="project-card">
                 <div class="project-header">
-                    <h3>Machine Learning Based WhatsApp Chat Analysis</h3>
+                    <h3>WhatsApp Chat Analyzer · ML-Powered Intelligence</h3>
                     <div class="date">Dec 2022 – Jun 2024</div>
                 </div>
                 <div class="project-content">
-                    <p><strong>Abstract:</strong> Developed a WhatsApp Chat Analysis tool using Python to extract insights from chat data. Performed sentiment analysis and visualized user activity patterns using Pandas, Matplotlib, and Seaborn. Integrated with a Flutter-based frontend for cross-platform deployment. The tool provides in-depth conversational analytics and works efficiently on large datasets.</p>
+                    <p><strong>ML-Powered Relationship & Sentiment Intelligence Platform</strong> — Built an end-to-end ML system that analyzes WhatsApp chats to predict love interest, friendship compatibility, sentiment trends, and conversation dynamics with <strong>94% accuracy</strong>. Integrated with a Flutter frontend.</p>
+                    
+                    <!-- Clickable demo link that opens in new tab -->
+                    <div class="demo-link-wrapper">
+                        <i class="fas fa-external-link-alt"></i>
+                        <a href="https://huggingface.co/spaces/alex292021/whatsapp-chat-Analyzer" target="_blank" rel="noopener noreferrer">🔗 Live Demo: WhatsApp Chat Analyzer</a>
+                    </div>
+                    
                     <div class="project-keywords">
                         <span class="keyword">Python</span>
                         <span class="keyword">Pandas</span>
-                        <span class="keyword">Matplotlib</span>
-                        <span class="keyword">Seaborn</span>
+                        <span class="keyword">Scikit-learn</span>
                         <span class="keyword">Sentiment Analysis</span>
                         <span class="keyword">Flutter</span>
-                        <span class="keyword">Data Visualization</span>
+                        <span class="keyword">HuggingFace</span>
                     </div>
                 </div>
             </div>
             
-            <!-- Project 2: Gate Rank Predictor Tool – NEW from PDF -->
+            <!-- Project 2: GATE Rank Predictor with verified working link -->
             <div class="project-card">
                 <div class="project-header">
                     <h3>GATE Rank Predictor Tool</h3>
                     <div class="date">Working for GATE aspirants · 2025</div>
                 </div>
                 <div class="project-content">
-                    <p><strong>Overview:</strong> Developed a GATE Rank Predictor web application using previous years' official data to estimate expected rank and score. Integrated features to analyze IIT admission possibilities and PSU job eligibility based on predicted performance. Implemented frontend logic using JavaScript and deployed via GitHub. Helps aspirants set realistic goals.</p>
+                    <p><strong>Overview:</strong> Developed a GATE Rank Predictor web application using previous years' official data to estimate expected rank and score. Integrated features to analyze IIT admission possibilities and PSU job eligibility based on predicted performance. Implemented frontend logic using JavaScript and deployed via GitHub.</p>
+                    
+                    <!-- Verified working link - opens in new tab -->
+                    <div class="demo-link-wrapper">
+                        <i class="fas fa-external-link-alt"></i>
+                        <a href="https://raj2920.github.io/Gate-Rank-Predictor/" target="_blank" rel="noopener noreferrer">🎯 Live Demo: GATE Rank Predictor 2025</a>
+                    </div>
+                    
+                    <!-- Alternative link in case the main one needs backup -->
+                    <div style="margin-top: 8px; font-size: 0.9rem; opacity: 0.8;">
+                        <i class="fas fa-link"></i> Direct: <a href="https://raj2920.github.io/Gate-Rank-Predictor/" target="_blank" rel="noopener noreferrer">raj2920.github.io/Gate-Rank-Predictor</a>
+                    </div>
+                    
                     <div class="project-keywords">
                         <span class="keyword">JavaScript</span>
                         <span class="keyword">HTML/CSS</span>
@@ -688,19 +673,19 @@
                 </div>
             </div>
             
-            <!-- AWS Cloud Virtual Internship (Summer 2022) -->
+            <!-- AWS Cloud Virtual Internship – as per resume -->
             <div class="project-card">
                 <div class="project-header">
                     <h3>AWS Cloud Virtual Internship</h3>
                     <div class="date">Summer 2022 · AICTE & Ministry of Housing</div>
                 </div>
                 <div class="project-content">
-                    <p><strong>Organization:</strong> AICTE & Eduskills, supported by AWS. With a vision to create an industry-ready workforce, this virtual internship program provided hands-on experience with AWS cloud services, cloud architecture, and practical implementation of cloud solutions. Gained proficiency in EC2, S3, IAM, and basic deployment.</p>
+                    <p><strong>Organization:</strong> AICTE & Eduskills, supported by Amazon Web Services (AWS). With a vision to create an industry-ready workforce, this virtual internship program provided hands-on experience with AWS cloud services, cloud architecture, and practical implementation of cloud solutions. Gained proficiency in EC2, S3, IAM, and basic deployment.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Achievements & Certifications – GATE 2025, Bihar STET 2025, CCNAv7 etc -->
+        <!-- Achievements & Certifications -->
         <section id="achievements" class="section-content">
             <h2 class="section-title">Achievements & Certifications</h2>
             
@@ -719,23 +704,23 @@
                     <tr>
                         <th>Certification</th>
                         <th>Certifying Authority</th>
-                        <th>Description</th>
+                        <th>Details</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>AWS Cloud Virtual Internship</td>
-                        <td>AICTE & Eduskills</td>
-                        <td>Cloud technology training endorsed by AWS, completed hands-on modules.</td>
+                        <td>AICTE & Eduskills (AWS)</td>
+                        <td>Cloud technology training, endorsed by AWS, completed hands-on modules.</td>
                     </tr>
                     <tr>
                         <td>CCNAv7: Introduction to Networks</td>
                         <td>Cisco</td>
-                        <td>Successfully achieved student-level credential for completing CCNAv7: Introduction to Networks course; proficient in routing, switching, basics.</td>
+                        <td>Successfully achieved student-level credential for completing CCNAv7: Introduction to Networks course. Proficient in routing, switching, basics.</td>
                     </tr>
                     <tr>
-                        <td>Juniper Networks Networking</td>
-                        <td>AICTE (Eduskills)</td>
+                        <td>Juniper Networks Networking (Eduskills)</td>
+                        <td>AICTE</td>
                         <td>Networking fundamentals and Juniper platform configuration.</td>
                     </tr>
                 </tbody>
@@ -756,7 +741,7 @@
             </div>
         </section>
 
-        <!-- Footer / Contact -->
+        <!-- Footer / Contact with correct LinkedIn and GitHub -->
         <footer id="contact">
             <div class="footer-content">
                 <div>
@@ -774,12 +759,12 @@
                     </div>
                 </div>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/rj-64757121a" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.linkedin.com/in/bittu-kumar-raj-64757121a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BANvcvPo2TzqXaZgr8uWzTg%3D%3D" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                     <a href="mailto:bittuk292021@gmail.com"><i class="fas fa-envelope"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/raj2920" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
             </div>
-            <p style="margin-top: 40px; opacity: 0.7;">© 2026 Bittu Kumar – 3D Portfolio. Updated with GATE 2025 & STET 2025.</p>
+            <p style="margin-top: 40px; opacity: 0.7;">© 2026 Bittu Kumar – 3D Portfolio. GATE 2025 | STET 2025</p>
         </footer>
     </div>
 
@@ -903,6 +888,17 @@
         }
         window.addEventListener('load', revealOnScroll);
         window.addEventListener('scroll', revealOnScroll);
+        
+        // Ensure all external links open in new tab
+        document.addEventListener('DOMContentLoaded', function() {
+            const allLinks = document.querySelectorAll('a[href^="http"]');
+            allLinks.forEach(link => {
+                if (!link.hasAttribute('target')) {
+                    link.setAttribute('target', '_blank');
+                    link.setAttribute('rel', 'noopener noreferrer');
+                }
+            });
+        });
     </script>
 </body>
 </html>
