@@ -37,7 +37,7 @@
         .container * {
             pointer-events: auto;
         }
-        /* glassmorphism style */
+        /* --- HEADER STYLES (unchanged) --- */
         header {
             padding: 30px 0;
             display: flex;
@@ -93,87 +93,342 @@
             border-radius: 40px;
             backdrop-filter: blur(5px);
         }
+
+        /* --- NEW HERO SECTION (like reference image) --- */
         .hero {
             min-height: 90vh;
             display: flex;
             align-items: center;
-            padding: 60px 0;
+            padding: 40px 0 80px;
+            position: relative;
         }
-        .hero-content {
-            max-width: 750px;
-            background: rgba(8, 8, 20, 0.6);
-            backdrop-filter: blur(14px);
+
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .hero-left {
+            flex: 1 1 450px;
+            max-width: 600px;
+            background: rgba(8, 8, 20, 0.5);
+            backdrop-filter: blur(12px);
             padding: 40px 45px;
-            border-radius: 28px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
             box-shadow: 0 25px 45px rgba(0,0,0,0.5);
         }
-        .hero h1 {
-            font-size: 3.2rem;
+
+        .hero-left .greeting {
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: #e0e0e0;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .hero-left h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
             line-height: 1.1;
-            margin-bottom: 10px;
+            margin-bottom: 16px;
             background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            letter-spacing: -0.5px;
         }
-        .hero h2 {
-            font-size: 1.7rem;
+
+        .hero-left .tagline {
+            font-size: 1.3rem;
+            line-height: 1.5;
+            margin-bottom: 28px;
+            color: #cbd5e1;
             font-weight: 400;
-            margin-bottom: 10px;
-            opacity: 0.95;
-            color: #e0f2fe;
+            max-width: 480px;
         }
-        .hero p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-        .contact-info {
+
+        .hero-buttons {
             display: flex;
             flex-wrap: wrap;
             gap: 18px;
-            margin-bottom: 35px;
+            margin-bottom: 40px;
         }
-        .contact-item {
-            display: flex;
+
+        .btn-primary {
+            display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background: rgba(255, 255, 255, 0.06);
-            padding: 10px 22px;
-            border-radius: 60px;
-            backdrop-filter: blur(10px);
-            border: 0.5px solid rgba(78,205,196,0.3);
+            gap: 12px;
+            padding: 14px 34px;
+            background: transparent;
+            border: 2px solid #4ecdc4;
+            border-radius: 50px;
+            color: #4ecdc4;
+            font-weight: 600;
+            font-size: 1.05rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
-        .contact-item i {
+
+        .btn-primary:hover {
+            background: #4ecdc4;
+            color: #0a0a16;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(78, 205, 196, 0.3);
+        }
+
+        .btn-video {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 10px;
+            background: transparent;
+            border: none;
+            color: #f0f0f0;
+            font-weight: 500;
+            font-size: 1.05rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-video i {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1.5px solid #4ecdc4;
+            border-radius: 50%;
+            color: #4ecdc4;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-video:hover i {
+            background: #4ecdc4;
+            color: #0a0a16;
+            transform: scale(1.05);
+        }
+
+        .btn-video:hover {
             color: #4ecdc4;
         }
-        .cta-button {
-            display: inline-block;
-            padding: 15px 42px;
-            background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-            margin-right: 20px;
-            margin-bottom: 15px;
-            border: none;
+
+        /* stats row */
+        .hero-stats {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            margin-top: 10px;
         }
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 18px 35px rgba(0,0,0,0.4);
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
         }
-        .cta-button.secondary {
-            background: rgba(20,20,40,0.7);
-            border: 1px solid #4ecdc4;
-            color: #f0f0f0;
-            backdrop-filter: blur(5px);
+
+        .stat-item .icon-box {
+            width: 52px;
+            height: 52px;
+            background: rgba(78, 205, 196, 0.12);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: #4ecdc4;
+            border: 1px solid rgba(78, 205, 196, 0.2);
         }
+
+        .stat-item .stat-text .number {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        .stat-item .stat-text .label {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            letter-spacing: 0.5px;
+        }
+
+        .avatars {
+            display: flex;
+            align-items: center;
+            margin-left: 4px;
+        }
+
+        .avatars img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #0a0a16;
+            margin-left: -10px;
+            object-fit: cover;
+            background: #1e1e2e;
+        }
+
+        .avatars img:first-child {
+            margin-left: 0;
+        }
+
+        .avatars .more {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #4ecdc4;
+            color: #0a0a16;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-left: -10px;
+            border: 2px solid #0a0a16;
+        }
+
+        /* right side – photo with geometric outline */
+        .hero-right {
+            flex: 1 1 380px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            min-height: 420px;
+        }
+
+        .photo-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 420px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .photo-wrapper img {
+            width: 100%;
+            max-width: 360px;
+            height: auto;
+            border-radius: 30px;
+            object-fit: cover;
+            display: block;
+            position: relative;
+            z-index: 3;
+            box-shadow: 0 25px 45px rgba(0,0,0,0.6);
+            border: 2px solid rgba(255,255,255,0.05);
+        }
+
+        /* geometric triangle/hex outline */
+        .geometric-outline {
+            position: absolute;
+            width: 115%;
+            height: 115%;
+            top: -7.5%;
+            left: -7.5%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .geometric-outline svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .geometric-outline svg polygon {
+            fill: none;
+            stroke: #4ecdc4;
+            stroke-width: 2;
+            opacity: 0.5;
+            filter: drop-shadow(0 0 6px rgba(78,205,196,0.3));
+        }
+
+        /* floating accent dots */
+        .accent-dot {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ff6b6b, transparent 70%);
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .accent-dot-1 {
+            width: 300px;
+            height: 300px;
+            top: -80px;
+            right: -80px;
+        }
+
+        .accent-dot-2 {
+            width: 200px;
+            height: 200px;
+            bottom: -50px;
+            left: -50px;
+            background: radial-gradient(circle, #4ecdc4, transparent 70%);
+        }
+
+        /* rotating badge */
+        .rotating-badge {
+            position: absolute;
+            bottom: 10px;
+            right: -20px;
+            width: 120px;
+            height: 120px;
+            background: rgba(10, 10, 25, 0.8);
+            backdrop-filter: blur(8px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(78, 205, 196, 0.3);
+            box-shadow: 0 0 30px rgba(78, 205, 196, 0.1);
+            z-index: 4;
+            animation: spin 12s linear infinite;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        .rotating-badge .badge-inner {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #4ecdc4, #3b8d8a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #0a0a16;
+            font-weight: 700;
+            box-shadow: 0 0 20px rgba(78, 205, 196, 0.4);
+        }
+
+        .rotating-badge .badge-text {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            font-size: 0.6rem;
+            color: #94a3b8;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: spin 12s linear infinite reverse;
+        }
+
+        /* --- REST OF STYLES (unchanged) --- */
         .section-title {
             font-size: 2.5rem;
             margin-bottom: 60px;
@@ -433,21 +688,39 @@
             background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
             transform: translateY(-6px);
         }
+
         @media (max-width: 992px) {
-            .hero h1 { font-size: 2.8rem; }
+            .hero-left h1 { font-size: 2.8rem; }
             .footer-content { flex-direction: column; text-align: center; }
+            .hero-grid { justify-content: center; }
+            .hero-left { text-align: center; }
+            .hero-left .tagline { margin-left: auto; margin-right: auto; }
+            .hero-buttons { justify-content: center; }
+            .hero-stats { justify-content: center; }
         }
+
         @media (max-width: 768px) {
-            .nav-links { display: none; flex-direction: column; position: absolute; top: 90px; left: 0; width: 100%; background: rgba(8,8,20,0.95); backdrop-filter: blur(20px); padding: 30px; border-radius: 0 0 20px 20px; gap: 20px; }
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 90px; left: 0; width: 100%; background: rgba(8,8,20,0.95); backdrop-filter: blur(20px); padding: 30px; border-radius: 0 0 20px 20px; gap: 20px; z-index: 100; }
             .nav-links a { font-size: 1.2rem; }
             .mobile-menu-btn { display: block; }
-            .hero h1 { font-size: 2.2rem; }
-            .hero-content { padding: 30px 25px; }
+            .hero-left h1 { font-size: 2.2rem; }
+            .hero-left { padding: 30px 25px; }
             .academic-table { display: block; overflow-x: auto; }
+            .photo-wrapper img { max-width: 260px; }
+            .hero-right { min-height: 300px; }
+            .rotating-badge { width: 90px; height: 90px; right: -10px; bottom: 0px; }
+            .rotating-badge .badge-inner { width: 45px; height: 45px; font-size: 1.1rem; }
         }
+
         @media (max-width: 480px) {
             .contact-info { flex-direction: column; }
             .cta-button { width: 100%; margin-right: 0; }
+            .hero-left h1 { font-size: 1.9rem; }
+            .hero-left .greeting { font-size: 1.2rem; }
+            .hero-left .tagline { font-size: 1rem; }
+            .btn-primary { padding: 12px 24px; font-size: 0.95rem; }
+            .btn-video { font-size: 0.95rem; }
+            .btn-video i { width: 38px; height: 38px; font-size: 0.95rem; }
         }
     </style>
 </head>
@@ -472,32 +745,82 @@
             </nav>
         </header>
 
-        <!-- Hero Section – exact details aligned to resume -->
+        <!-- ===== HERO SECTION – REDESIGNED LIKE REFERENCE IMAGE ===== -->
         <section class="hero" id="home">
-            <div class="hero-content">
-                <h1>BITTU KUMAR (RAJ)</h1>
-                <h2>B.Tech, Computer Science & Engineering (2024)</h2>
-                <p>GATE 2025 qualified (CS) · Bihar STET 2025 qualified. Skilled in C/C++, Data Structures, Algorithms, OS, DBMS, Computer Networks, and emerging tech. Passionate software developer seeking challenging roles.</p>
-                
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>bittuk292021@gmail.com</span>
+            <div class="hero-grid">
+                <!-- LEFT SIDE – TEXT -->
+                <div class="hero-left">
+                    <div class="greeting">Hello I'm</div>
+                    <h1>BITTU KUMAR (RAJ)</h1>
+                    <div class="tagline">
+                        A passionate Software Developer & GATE 2025 Qualified<br>
+                        Solving problems through code & innovation.
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>9608520740</span>
+
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn-primary">
+                            <i class="fas fa-arrow-right"></i> Let's Get Started
+                        </a>
+                        <a href="#projects" class="btn-video">
+                            <i class="fas fa-play"></i> Watch My Work
+                        </a>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>UG: 71.6%</span>
+
+                    <!-- stats row -->
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="icon-box">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="stat-text">
+                                <div class="number">GATE 2025</div>
+                                <div class="label">Qualified (CS)</div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="avatars">
+                                <img src="https://ui-avatars.com/api/?name=GATE&background=4ecdc4&color=0a0a16&size=40" alt="GATE">
+                                <img src="https://ui-avatars.com/api/?name=STET&background=ff6b6b&color=0a0a16&size=40" alt="STET">
+                                <img src="https://ui-avatars.com/api/?name=CSE&background=4ecdc4&color=0a0a16&size=40" alt="CSE">
+                                <div class="more">+</div>
+                            </div>
+                            <div class="stat-text">
+                                <div class="number">2+</div>
+                                <div class="label">National Exams</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                <a href="#contact" class="cta-button">Hire Me</a>
-                <a href="https://www.linkedin.com/in/bittu-kumar-raj-64757121a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BANvcvPo2TzqXaZgr8uWzTg%3D%3D" target="_blank" class="cta-button secondary">LinkedIn</a>
+
+                <!-- RIGHT SIDE – PHOTO WITH GEOMETRIC OUTLINE -->
+                <div class="hero-right">
+                    <div class="photo-wrapper">
+                        <!-- BK PHOTO -->
+                        <img src="bk.jpeg" alt="Bittu Kumar (Raj)">
+
+                        <!-- Geometric outline (triangle/hex) -->
+                        <div class="geometric-outline">
+                            <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
+                                <polygon points="200,20 380,300 20,300" />
+                            </svg>
+                        </div>
+
+                        <!-- Accent dots -->
+                        <div class="accent-dot accent-dot-1"></div>
+                        <div class="accent-dot accent-dot-2"></div>
+
+                        <!-- Rotating badge -->
+                        <div class="rotating-badge">
+                            <div class="badge-inner">
+                                <i class="fas fa-code"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
+
+        <!-- ===== REST OF THE SECTIONS (UNCHANGED) ===== -->
 
         <!-- Career Objective – exact two points from PDF -->
         <section id="objective" class="section-content">
